@@ -32,6 +32,9 @@ import sys.io.File;
 import sys.FileSystem;
 #end
 import WeekData;
+#if android
+import android.*;
+#end
 
 using StringTools;
 
