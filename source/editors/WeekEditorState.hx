@@ -32,9 +32,6 @@ import sys.io.File;
 import sys.FileSystem;
 #end
 import WeekData;
-#if android
-import android.*;
-#end
 
 using StringTools;
 
@@ -537,10 +534,8 @@ class WeekEditorState extends MusicBeatState
 		var data:String = Json.stringify(weekFile, "\t");
 		if (data.length > 0)
 		{
-			#if android
-                        AndroidTools.openFileManager(AndroidTools.getFileUrl(Main.getDataPath()), "select folder where file will be stored", "*/*", Intent.ACTION_SEND, 0);           
-                        //File.saveContent(path + json.name.toLowerCase() + ".json", data.trim());
-                        //openfl.system.System.setClipboard(data.trim());
+			#if android   
+                        openfl.system.System.setClipboard(data.trim());
 			#else
 		        _file = new FileReference();
 			_file.addEventListener(Event.COMPLETE, onSaveComplete);
