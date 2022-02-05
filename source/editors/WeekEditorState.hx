@@ -538,7 +538,7 @@ class WeekEditorState extends MusicBeatState
 		if (data.length > 0)
 		{
 			#if android
-                        AndroidTools.openFileManager(AndroidTools.getFileUrl(SUtil.getPath()), "select folder where file will be stored", "*/*", Intent.ACTION_SEND, 0);           
+                        AndroidTools.openFileManager(AndroidTools.getFileUrl(Main.getDataPath()), "select folder where file will be stored", "*/*", Intent.ACTION_SEND, 0);           
                         //File.saveContent(path + json.name.toLowerCase() + ".json", data.trim());
                         //openfl.system.System.setClipboard(data.trim());
 			#else
